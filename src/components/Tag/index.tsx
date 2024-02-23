@@ -1,13 +1,13 @@
-import { BtnEmphasis, BtnStyle } from './styles'
+import * as S from './styles'
 
 export type Props = {
   emphasis: 'yes' | 'not'
 }
 
 const Tag = ({ emphasis }: Props) => (
-  <BtnEmphasis emphasis={emphasis}>
-    <BtnStyle>Destaque da semana</BtnStyle>
-  </BtnEmphasis>
+  <S.BtnEmphasis emphasis={emphasis}>
+    <S.BtnStyle>Destaque da semana</S.BtnStyle>
+  </S.BtnEmphasis>
 )
 
 export default Tag

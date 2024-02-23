@@ -1,16 +1,18 @@
 import logo from '../../assets/images/logo.png'
-import { HeaderDiv, Titulo } from './styles'
+import * as S from './styles'
 
 const Header = () => (
-  <HeaderDiv>
+  <S.HeaderDiv>
     <div className="container">
-      <img src={logo} alt="EFOOD" />
-      <Titulo>
+      <S.Logo to={'/'}>
+        <img src={logo} alt="EFOOD" />
+      </S.Logo>
+      <S.Titulo>
         Viva experiências gastronômicas <br />
         no conforto da sua casa
-      </Titulo>
+      </S.Titulo>
     </div>
-  </HeaderDiv>
+  </S.HeaderDiv>
 )
 
 export default Header

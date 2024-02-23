@@ -1,4 +1,4 @@
-import { Card, DivFlex, Description, Btns, ContainerDescription, BtnLink } from './styles'
+import * as S from './styles'
 import star_favorite from '../../assets/images/star_favorite.png'
 import { BtnContainer } from '../Button/styles'
 import Tag from '../Tag'
@@ -19,24 +19,24 @@ const RestaurantCard = ({
   origin,
   classification
 }: Props) => (
-  <Card>
+  <S.Card>
     <img src={image} alt="sushi" />
-    <Btns>
+    <S.Btns>
       <Tag emphasis={emphasis} />
       <BtnContainer className='btn-country'>{origin}</BtnContainer>
-    </Btns>
-    <ContainerDescription>
-      <DivFlex>
+    </S.Btns>
+    <S.ContainerDescription>
+      <S.DivFlex>
         <h3>{name}</h3>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <p>{classification}</p>
           <span><img src={star_favorite} alt="estrela de favoritos" /></span>
         </div>
-      </DivFlex>
-      <Description>{description}</Description>
-      <BtnLink to={"/perfil"} className='btn-saiba_mais'>Saiba mais</BtnLink>
-    </ContainerDescription>
-  </Card>
+      </S.DivFlex>
+      <S.Description>{description}</S.Description>
+      <S.BtnLink to={"/perfil"} className='btn-saiba_mais'>Saiba mais</S.BtnLink>
+    </S.ContainerDescription>
+  </S.Card>
 )
 
 export default RestaurantCard

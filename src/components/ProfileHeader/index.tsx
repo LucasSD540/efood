@@ -1,4 +1,4 @@
-import { ProfContainer, RestaurantImg, LogoImg, RestaurantDiv, OriginTitle, Title } from './styles'
+import * as S from './styles'
 import { BtnLink } from '../Button/styles';
 
 import logo from '../../assets/images/logo.png'
@@ -6,24 +6,26 @@ import logo from '../../assets/images/logo.png'
 import { Props } from '../Button/index'
 
 const ProfileHeader = ({ to }: Omit<Props, 'type' | 'children' | 'title'>) => (
-  <ProfContainer>
+  <S.ProfContainer>
     <div className="container">
       <BtnLink to={'/'}>
         Restaurantes
       </BtnLink>
-      <LogoImg src={logo} alt="logo" />
+      <S.LogoLink to={'/'}>
+        <img src={logo} alt="logo" />
+      </S.LogoLink>
       <BtnLink to={'/carrinho'}>
         0 produto(s) no carrinho
       </BtnLink>
     </div>
-    <RestaurantDiv>
-      <RestaurantImg />
+    <S.RestaurantDiv>
+      <S.RestaurantImg />
       <div className="container">
-        <OriginTitle>Italiana</OriginTitle>
-        <Title>La Dolce Vita Trattoria</Title>
+        <S.OriginTitle>Italiana</S.OriginTitle>
+        <S.Title>La Dolce Vita Trattoria</S.Title>
       </div>
-    </RestaurantDiv>
-  </ProfContainer>
+    </S.RestaurantDiv>
+  </S.ProfContainer>
 )
 
 export default ProfileHeader

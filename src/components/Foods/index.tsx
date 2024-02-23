@@ -1,4 +1,4 @@
-import { Card, FoodImage, FoodName, FoodDescription, CardInfo, AddCartBtn } from './styles'
+import * as S from './styles'
 
 type Props = {
   name: string
@@ -7,15 +7,14 @@ type Props = {
 }
 
 const Food = ({ name, image, description }: Props) => (
-  <Card>
-    <FoodImage src={image} alt="Pizza Margurita" />
-    <CardInfo>
-      <FoodName>{name}</FoodName>
-      <FoodDescription>{description}</FoodDescription>
-      <AddCartBtn>Adicionar ao carrinho</AddCartBtn>
-    </CardInfo>
-  </Card>
+  <S.Card>
+    <S.FoodImage src={image} alt="Pizza Margurita" />
+    <S.CardInfo>
+      <S.FoodName>{name}</S.FoodName>
+      <S.FoodDescription>{description}</S.FoodDescription>
+      <S.AddCartBtn>Adicionar ao carrinho</S.AddCartBtn>
+    </S.CardInfo>
+  </S.Card>
 )
 
 export default Food
-

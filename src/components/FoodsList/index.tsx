@@ -1,15 +1,15 @@
 import Food from '../../models/Food'
 import FoodCard from '../Foods'
 
-import { FoodContainer, GridContainer } from './styles'
+import * as S from './styles'
 
 export type Props = {
   food: Food[]
 }
 
 const FoodsList = ({ food }: Props) => (
-  <FoodContainer>
-    <GridContainer className='container'>
+  <S.FoodContainer>
+    <S.GridContainer className='container'>
       {food.map((food) => (
         <FoodCard 
           key={food.id}
@@ -18,8 +18,8 @@ const FoodsList = ({ food }: Props) => (
           description={food.description}
         />
       ))}
-    </GridContainer>
-  </FoodContainer>
+    </S.GridContainer>
+  </S.FoodContainer>
 )
 
 export default FoodsList

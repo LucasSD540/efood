@@ -3,7 +3,7 @@ import { cores } from "../../styles"
 import { Link } from "react-router-dom"
 
 export const Card = styled.div`
-  height: 400px;
+  height: 408px;
   max-width: 472px;
   width: 100%;
   background-color: ${cores.branco};
@@ -25,7 +25,12 @@ export const DivFlex = styled.div`
 
   h3 {
     font-size: 18px;
-    margin-top: 4px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-weight: 700;
   }
 
   span {
@@ -48,7 +53,7 @@ export const Description = styled.p`
 export const Btns = styled.div`
   position: absolute;
   top: 16px;
-  right: 16px;
+  right: 14px;
 
   .btn-country {
     margin-left: 8px;
@@ -66,7 +71,8 @@ export const BtnLink = styled(Link)`
   color: ${cores.fundo};
   padding: 6px 4px;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
+  line-height: 16.41px;
   border: none;
   cursor: pointer;
   text-decoration: none;

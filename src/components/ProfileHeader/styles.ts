@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { cores } from "../../styles"
 
 import ladolcevita from '../../assets/images/ladloceVita.png'
+import { Link } from "react-router-dom"
 
 export const ProfContainer = styled.div`
   background-color: ${cores.fundo};
@@ -11,14 +12,16 @@ export const ProfContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 63px;
+    padding-top: 40px;
     margin-bottom: 65px;
   }
 `
 
-export const LogoImg = styled.img`
-  width: 125px;
-  height: 57.5px;
+export const LogoLink = styled(Link)`
+  img {
+    width: 125px;
+    height: 57.5px;
+  }
 `
 
 export const RestaurantImg = styled.div`
