@@ -2,10 +2,14 @@ import * as S from './styles'
 import { BtnLink } from '../Button/styles';
 
 import logo from '../../assets/images/logo.png'
+import { Restaurant } from '../../pages/Profile'
 
-import { Props } from '../Button/index'
+type ProfileHeaderProps = {
+  restaurant: Restaurant
+}
 
-const ProfileHeader = ({ to }: Omit<Props, 'type' | 'children' | 'title'>) => (
+const ProfileHeader = ({ restaurant } : ProfileHeaderProps) => {
+return (
   <S.ProfContainer>
     <div className="container">
       <BtnLink to={'/'}>
@@ -18,14 +22,13 @@ const ProfileHeader = ({ to }: Omit<Props, 'type' | 'children' | 'title'>) => (
         0 produto(s) no carrinho
       </BtnLink>
     </div>
-    <S.RestaurantDiv>
-      <S.RestaurantImg />
+    <S.RestaurantImg style={{ backgroundImage: `url(${restaurant.capa})` }}>
       <div className="container">
-        <S.OriginTitle>Italiana</S.OriginTitle>
-        <S.Title>La Dolce Vita Trattoria</S.Title>
+        <S.OriginTitle>{restaurant.tipo}</S.OriginTitle>
+        <S.Title>{restaurant.titulo}</S.Title>
       </div>
-    </S.RestaurantDiv>
+    </S.RestaurantImg>
   </S.ProfContainer>
-)
+)}
 
 export default ProfileHeader

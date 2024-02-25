@@ -1,10 +1,11 @@
-import Food from '../../models/Food'
 import FoodCard from '../Foods'
 
 import * as S from './styles'
 
+import { FoodItem } from '../../pages/Profile'
+
 export type Props = {
-  food: Food[]
+  food: FoodItem[]
 }
 
 const FoodsList = ({ food }: Props) => (
@@ -13,9 +14,12 @@ const FoodsList = ({ food }: Props) => (
       {food.map((food) => (
         <FoodCard 
           key={food.id}
-          name={food.name}
-          image={food.image}
-          description={food.description}
+          foto={food.foto}
+          preco={food.preco}
+          id={food.id}
+          nome={food.nome}
+          descricao={food.descricao}
+          porcao={food.porcao}
         />
       ))}
     </S.GridContainer>

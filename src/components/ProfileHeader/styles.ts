@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { cores } from "../../styles"
 
-import ladolcevita from '../../assets/images/ladloceVita.png'
 import { Link } from "react-router-dom"
 
 export const ProfContainer = styled.div`
@@ -25,21 +24,25 @@ export const LogoLink = styled(Link)`
 `
 
 export const RestaurantImg = styled.div`
-  height: 280px;
-  width: 100%;
-  position: absolute;
-  z-index: 0;
-  background-image: url(${ladolcevita});
-  background-size: cover;
-  opacity: .5;
-`
-
-export const RestaurantDiv = styled.div`
-  width: 100%;
-  height: 280px;
-  background-color: #000;
   position: relative;
-  z-index: 1;
+  display: block;
+  height: 280px;
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  &::after {
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    opacity: .5;
+  }
 `
 
 export const OriginTitle = styled.h5`
@@ -48,6 +51,7 @@ export const OriginTitle = styled.h5`
   position: absolute;
   top: 24px;
   font-weight: 100;
+  z-index: 1;
 `
 
 export const Title = styled.h4`
@@ -56,4 +60,5 @@ export const Title = styled.h4`
   position: absolute;
   bottom: 32px;
   font-weight: 900;
+  z-index: 1;
 `

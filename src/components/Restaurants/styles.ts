@@ -16,6 +16,13 @@ export const Card = styled.div`
     position: absolute;
     margin-top: 16px;
   }
+
+  > img {
+    max-width: 472px;
+    width: 100%;
+    height: 217px;
+    object-fit: cover;
+  }
 `
 
 export const DivFlex = styled.div`
@@ -54,9 +61,10 @@ export const Btns = styled.div`
   position: absolute;
   top: 16px;
   right: 14px;
-
+  
   .btn-country {
     margin-left: 8px;
+    cursor: initial;
   }
 `
 
