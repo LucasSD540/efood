@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { cores } from "../../styles"
+import { breakpoints, cores } from "../../styles"
 
 export const FooterDiv = styled.div`
   background-color: ${cores.fundo};
@@ -17,6 +17,12 @@ export const FooterContainer = styled.div`
     height: 57.5px;
     margin-top: 40px;
     margin-bottom: 32.5px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      height: 47.5px;
+      max-width: 105px;
+      width: 100%;
+    }
   }
 
   .media-links {

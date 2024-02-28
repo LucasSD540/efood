@@ -1,18 +1,30 @@
 import * as S from './styles'
 
 import closeIcon from '../../assets/images/close_icon.png'
-import { useState } from 'react';
+import { useState } from 'react'
+
+import { add, open } from '../../store/reducers/cart'
+import { useDispatch } from 'react-redux'
+import { FoodItem } from '../../pages/Profile'
 
 type Props = {
-  foto: string;
-  preco: number;
-  id: number;
-  nome: string;
-  descricao: string;
-  porcao: string;
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
+  food: FoodItem
 }
 
-const Food = ({ foto, preco, id, nome, descricao, porcao }: Props) => {
+const Food = ({ foto, preco, id, nome, descricao, porcao, food }: Props) => {
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(food))
+    dispatch(open())
+  }
+
   const [modal, setModal] = useState(false)
 
   const getDescricao = (descricao: string) => {
@@ -54,7 +66,7 @@ const formatPrice = (preco = 0) => {
               <h3>{nome}</h3>
               <p>{getDescricaoModal(descricao)}</p>
               <p>Serve: de {porcao}</p>
-              <S.AddBtn>Adicionar ao carrinho - {formatPrice(preco)}</S.AddBtn>
+              <S.AddBtn onClick={addToCart}>Adicionar ao carrinho - {formatPrice(preco)}</S.AddBtn>
             </S.ModalInfoDiv>
           </S.ModalContent>
           <div onClick={() => setModal(false)} className="overlay"></div>

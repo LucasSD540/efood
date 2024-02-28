@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { cores } from "../../styles"
+import { breakpoints, cores } from "../../styles"
 
 export const BtnContainer = styled.button`
   background-color: ${cores.vermelho};
@@ -17,4 +17,8 @@ export const BtnLink = styled(Link)`
   color: ${cores.vermelho};
   font-size: 18px;
   font-weight: bold;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 14px;
+}
 `

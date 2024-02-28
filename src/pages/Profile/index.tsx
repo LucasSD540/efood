@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
 import FoodsList from "../../components/FoodsList"
 import ProfileHeader from "../../components/ProfileHeader"
 import { useParams } from "react-router-dom"
+import { useGetFoodsQuery } from "../../services/api"
 
 export type FoodItem = {
     foto: string
@@ -25,13 +25,11 @@ export type Restaurant = {
 
 const Profile = () => {
   const { id } = useParams()
-  const [restaurant, setRestaurant] = useState<Restaurant>()
+  const { data: food, data: restaurant } = useGetFoodsQuery(id!)
 
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setRestaurant(res))
-  }, [id])
+  if (!food) {
+    return <h3>Carregando</h3>
+  }
 
   return (
     <>

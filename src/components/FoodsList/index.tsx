@@ -4,7 +4,7 @@ import * as S from './styles'
 
 import { FoodItem } from '../../pages/Profile'
 
-export type Props = {
+type Props = {
   food: FoodItem[]
 }
 
@@ -20,6 +20,7 @@ const FoodsList = ({ food }: Props) => (
           nome={food.nome}
           descricao={food.descricao}
           porcao={food.porcao}
+          food={food}
         />
       ))}
     </S.GridContainer>

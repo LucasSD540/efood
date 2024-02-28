@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import imagemFundo from '../../assets/images/imagemFundo.png'
 import { Link } from 'react-router-dom'
 
@@ -19,6 +19,12 @@ export const Logo = styled(Link)`
     max-width: 125px;
     width: 100%;
     margin-top: 40px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      height: 47.5px;
+      max-width: 105px;
+      width: 100%;
+    }
   }
 `
 
@@ -26,4 +32,8 @@ export const Titulo = styled.h2`
   font-size: 36px;
   margin-top: 138.5px;
   margin-bottom: 40px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+  }
 `

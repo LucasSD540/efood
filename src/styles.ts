@@ -9,6 +9,11 @@ export const cores = {
   rosaClaro: '#E667670D'
 }
 
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '767px'
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
     margin: 0;

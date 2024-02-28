@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { cores } from "../../styles"
+import { breakpoints, cores } from "../../styles"
 import { Link } from "react-router-dom"
 
 export const Card = styled.div`
@@ -34,18 +34,26 @@ export const DivFlex = styled.div`
     font-size: 18px;
     margin-top: 8px;
     margin-bottom: 16px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 14px;
+    }
   }
 
   p {
     font-weight: 700;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 14px;
+    }
   }
 
   span {
     margin-left: 8px;
 
     img {
-      width: 21px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       margin-top: 4px;
     }
   }
@@ -55,6 +63,11 @@ export const Description = styled.p`
   max-width: 456px;
   width: 100%;
   line-height: 22px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 12px;
+    line-height: 16px;
+  }
 `
 
 export const Btns = styled.div`
@@ -65,6 +78,11 @@ export const Btns = styled.div`
   .btn-country {
     margin-left: 8px;
     cursor: initial;
+    
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 12px;
+      padding: 4px 2px;
+    }
   }
 `
 
@@ -72,6 +90,10 @@ export const ContainerDescription = styled.div`
   max-width: 456px;
   width: 100%;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 240px;
+  }
 `
 
 export const BtnLink = styled(Link)`
@@ -84,4 +106,9 @@ export const BtnLink = styled(Link)`
   border: none;
   cursor: pointer;
   text-decoration: none;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 12px;
+    padding: 4px 2px;
+  }
 `

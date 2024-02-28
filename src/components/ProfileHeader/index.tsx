@@ -1,14 +1,24 @@
 import * as S from './styles'
-import { BtnLink } from '../Button/styles';
+import { BtnLink } from '../Button/styles'
 
 import logo from '../../assets/images/logo.png'
 import { Restaurant } from '../../pages/Profile'
+import { open } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
 type ProfileHeaderProps = {
   restaurant: Restaurant
 }
 
 const ProfileHeader = ({ restaurant } : ProfileHeaderProps) => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
 return (
   <S.ProfContainer>
     <div className="container">
@@ -18,9 +28,9 @@ return (
       <S.LogoLink to={'/'}>
         <img src={logo} alt="logo" />
       </S.LogoLink>
-      <BtnLink to={'/carrinho'}>
-        0 produto(s) no carrinho
-      </BtnLink>
+      <S.CartLink onClick={openCart}>
+        {items.length} produto(s) no carrinho
+      </S.CartLink>
     </div>
     <S.RestaurantImg style={{ backgroundImage: `url(${restaurant.capa})` }}>
       <div className="container">
