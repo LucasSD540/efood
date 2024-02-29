@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { cores } from "../../styles"
+import { breakpoints, cores } from "../../styles"
 
 import removeIcon from '../../assets/images/remove.png'
 
@@ -34,6 +34,10 @@ export const Sidebar = styled.aside`
   max-width: 360px;
   width: 100%;
   padding: 32px 8px 0 8px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 80%;
+  }
 `
 
 export const CartItem = styled.li`
