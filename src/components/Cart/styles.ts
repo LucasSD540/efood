@@ -7,7 +7,7 @@ export const Overlay = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: #000;
   opacity: 0.7;
@@ -18,6 +18,7 @@ export const CartContainer = styled.div`
   top: 0;
   left: 0;
   width: 100%;
+  min-height: 100vh;
   height: 100%;
   display: none;
   justify-content: flex-end;
@@ -33,7 +34,9 @@ export const Sidebar = styled.aside`
   z-index: 1;
   max-width: 360px;
   width: 100%;
-  padding: 32px 8px 0 8px;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 32px 8px;
 
   @media (max-width: ${breakpoints.tablet}) {
     max-width: 80%;
