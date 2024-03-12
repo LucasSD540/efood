@@ -5,23 +5,23 @@ import { useGetFoodsQuery } from '../../services/api'
 import Loader from '../../components/Loader'
 
 export type FoodItem = {
-  description: string
-  portion: string
-  photo: string
-  price: number
+  descricao: string
+  porcao: string
+  foto: string
+  preco: number
   id: number
-  name: string
+  nome: string
 }
 
 export type Restaurant = {
   id: number
-  title: string
-  highlighted: boolean
-  type: string
-  assessment: number
-  description: string
-  cover: string
-  menu: FoodItem[]
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  cardapio: FoodItem[]
 }
 
 const Profile = () => {
@@ -35,7 +35,7 @@ const Profile = () => {
   return (
     <>
       {restaurant && <ProfileHeader restaurant={restaurant} />}
-      {restaurant && <FoodsList food={restaurant.menu} />}
+      {restaurant && <FoodsList food={restaurant.cardapio} />}
     </>
   )
 }

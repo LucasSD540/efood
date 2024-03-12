@@ -30,10 +30,10 @@ const ProfileHeader = ({ restaurant }: ProfileHeaderProps) => {
           {items.length} produto(s) no carrinho
         </S.CartLink>
       </div>
-      <S.RestaurantImg style={{ backgroundImage: `url(${restaurant.cover})` }}>
+      <S.RestaurantImg style={{ backgroundImage: `url(${restaurant.capa})` }}>
         <div className="container">
-          <S.OriginTitle>{restaurant.type}</S.OriginTitle>
-          <S.Title>{restaurant.title}</S.Title>
+          <S.OriginTitle>{restaurant.tipo}</S.OriginTitle>
+          <S.Title>{restaurant.titulo}</S.Title>
         </div>
       </S.RestaurantImg>
     </S.ProfContainer>

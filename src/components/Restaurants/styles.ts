@@ -59,7 +59,7 @@ export const DivFlex = styled.div`
   }
 `
 
-export const Description = styled.p`
+export const descricao = styled.p`
   max-width: 456px;
   width: 100%;
   line-height: 22px;

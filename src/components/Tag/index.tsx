@@ -1,11 +1,11 @@
 import * as S from './styles'
 
 export type Props = {
-  highlighted: boolean
+  destacado: boolean
 }
 
-const Tag = ({ highlighted }: Props) => (
-  <S.BtnEmphasis highlighted={highlighted}>
+const Tag = ({ destacado }: Props) => (
+  <S.BtnEmphasis destacado={destacado}>
     <S.BtnStyle>Destaque da semana</S.BtnStyle>
   </S.BtnEmphasis>
 )

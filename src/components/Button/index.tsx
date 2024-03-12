@@ -2,23 +2,23 @@ import * as S from './styles'
 
 export type Props = {
   type: 'button' | 'link'
-  title: string
+  titulo: string
   to?: string
   onClick?: () => void
   children: string
 }
 
-const Button = ({ type, title, to, onClick, children }: Props) => {
+const Button = ({ type, titulo, to, onClick, children }: Props) => {
   if (type === 'button') {
     return (
-      <S.BtnContainer type="button" title={title} onClick={onClick}>
+      <S.BtnContainer type="button" title={titulo} onClick={onClick}>
         {children}
       </S.BtnContainer>
     )
   }
 
   return (
-    <S.BtnLink to={to as string} title={title}>
+    <S.BtnLink to={to as string} title={titulo}>
       {children}
     </S.BtnLink>
   )

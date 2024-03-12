@@ -5,48 +5,48 @@ import Tag from '../Tag'
 
 type Props = {
   id: number
-  title: string
-  highlighted: boolean
-  type: string
-  assessment: number
-  description: string
-  cover: string
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
 }
 
 const RestaurantCard = ({
   id,
-  title,
-  highlighted,
-  type,
-  assessment,
-  description,
-  cover
+  titulo,
+  destacado,
+  tipo,
+  avaliacao,
+  descricao,
+  capa
 }: Props) => {
-  const getDescricao = (description: string) => {
-    if (description.length > 240) {
-      return description.slice(0, 237) + '...'
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 240) {
+      return descricao.slice(0, 237) + '...'
     }
-    return description
+    return descricao
   }
 
   return (
     <S.Card>
-      <img src={cover} alt={`Imagem ${title}`} />
+      <img src={capa} alt={`Imagem ${titulo}`} />
       <S.Btns>
-        <Tag highlighted={highlighted} />
-        <BtnContainer className="btn-country">{type}</BtnContainer>
+        <Tag destacado={destacado} />
+        <BtnContainer className="btn-country">{tipo}</BtnContainer>
       </S.Btns>
       <S.ContainerDescription>
         <S.DivFlex>
-          <h3>{title}</h3>
+          <h3>{titulo}</h3>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <p>{assessment}</p>
+            <p>{avaliacao}</p>
             <span>
               <img src={star_favorite} alt="estrela de favoritos" />
             </span>
           </div>
         </S.DivFlex>
-        <S.Description>{getDescricao(description)}</S.Description>
+        <S.descricao>{getDescricao(descricao)}</S.descricao>
         <S.BtnLink to={`/perfil/${id}`} className="btn-saiba_mais">
           Saiba mais
         </S.BtnLink>

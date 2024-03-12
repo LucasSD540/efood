@@ -8,16 +8,16 @@ import { useDispatch } from 'react-redux'
 import { FoodItem } from '../../pages/Profile'
 
 type Props = {
-  photo: string
-  price: number
+  foto: string
+  preco: number
   id: number
-  name: string
-  description: string
-  portion: string
+  nome: string
+  descricao: string
+  porcao: string
   food: FoodItem
 }
 
-const Food = ({ photo, price, name, description, portion, food }: Props) => {
+const Food = ({ foto, preco, nome, descricao, porcao, food }: Props) => {
   const dispatch = useDispatch()
 
   const addToCart = () => {
@@ -27,33 +27,33 @@ const Food = ({ photo, price, name, description, portion, food }: Props) => {
 
   const [modal, setModal] = useState(false)
 
-  const getDescricao = (description: string) => {
-    if (description.length > 155) {
-      return description.slice(0, 152) + '...'
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 155) {
+      return descricao.slice(0, 152) + '...'
     }
-    return description
+    return descricao
   }
-  const getDescricaoModal = (description: string) => {
-    if (description.length > 695) {
-      return description.slice(0, 692) + '...'
+  const getDescricaoModal = (descricao: string) => {
+    if (descricao.length > 695) {
+      return descricao.slice(0, 692) + '...'
     }
-    return description
+    return descricao
   }
 
-  const formatPrice = (price = 0) => {
+  const formatPrice = (preco = 0) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
-    }).format(price)
+    }).format(preco)
   }
 
   return (
     <>
       <S.Card>
-        <S.FoodImage src={photo} alt={`Imagem de ${photo}`} />
+        <S.FoodImage src={foto} alt={`Imagem de ${foto}`} />
         <S.CardInfo>
-          <S.FoodName>{name}</S.FoodName>
-          <S.FoodDescription>{getDescricao(description)}</S.FoodDescription>
+          <S.FoodName>{nome}</S.FoodName>
+          <S.FoodDescription>{getDescricao(descricao)}</S.FoodDescription>
           <S.DetailsBtn onClick={() => setModal(true)}>
             Mais detalhes
           </S.DetailsBtn>
@@ -68,13 +68,13 @@ const Food = ({ photo, price, name, description, portion, food }: Props) => {
               src={closeIcon}
               alt="Ícone de fechar"
             />
-            <img src={photo} alt={`Imagem de ${photo}`} />
+            <img src={foto} alt={`Imagem de ${foto}`} />
             <S.ModalInfoDiv>
-              <h3>{name}</h3>
-              <p>{getDescricaoModal(description)}</p>
-              <p>Serve: de {portion}</p>
+              <h3>{nome}</h3>
+              <p>{getDescricaoModal(descricao)}</p>
+              <p>Serve: de {porcao}</p>
               <S.AddBtn onClick={addToCart}>
-                Adicionar ao carrinho - {formatPrice(price)}
+                Adicionar ao carrinho - {formatPrice(preco)}
               </S.AddBtn>
             </S.ModalInfoDiv>
           </S.ModalContent>

@@ -5,14 +5,14 @@ import { useGetRestaurantsQuery } from '../../services/api'
 import Loader from '../../components/Loader'
 
 export type Restaurant = {
-  menu: FoodItem[]
+  cardapio: FoodItem[]
   id: number
-  title: string
-  highlighted: boolean
-  type: string
-  assessment: number
-  description: string
-  cover: string
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
 }
 
 const Home = () => {

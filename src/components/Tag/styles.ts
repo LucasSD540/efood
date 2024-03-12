@@ -4,7 +4,7 @@ import { Props } from '.'
 import { breakpoints, colors } from '../../styles'
 
 export const BtnEmphasis = styled.div<Props>`
-  display: ${(props) => (props.highlighted ? 'inline-block' : 'none')};
+  display: ${(props) => (props.destacado ? 'inline-block' : 'none')};
 `
 
 export const BtnStyle = styled.button`

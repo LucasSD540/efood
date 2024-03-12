@@ -23,6 +23,7 @@ const Cart = () => {
     initialValues: {
       fullName: '',
       address: '',
+      description: '',
       city: '',
       cep: '',
       number: '',
@@ -35,13 +36,13 @@ const Cart = () => {
     },
     validationSchema: Yup.object({
       fullName: Yup.string()
-        .min(5, 'O name precisa ter pelo menos 5 caracteres')
+        .min(5, 'O nome precisa ter pelo menos 5 caracteres')
         .required('O campo é obrigatório'),
       address: Yup.string()
-        .min(5, 'O name precisa ter pelo menos 5 caracteres')
+        .min(5, 'O nome precisa ter pelo menos 5 caracteres')
         .required('O campo é obrigatório'),
       city: Yup.string()
-        .min(3, 'O name precisa ter pelo menos 3 caracteres')
+        .min(3, 'O nome precisa ter pelo menos 3 caracteres')
         .required('O campo é obrigatório'),
       cep: Yup.string()
         .min(10, 'O cep precisa ter pelo menos 10 caracteres')
@@ -73,7 +74,7 @@ const Cart = () => {
         delivery: {
           receiver: values.fullName,
           address: {
-            description: values.complement,
+            description: values.description,
             city: values.city,
             zipCode: values.cep,
             number: values.number,
@@ -93,7 +94,7 @@ const Cart = () => {
         },
         products: items.map((item) => ({
           id: item.id,
-          price: item.price
+          preco: item.preco
         }))
       })
     }
@@ -119,16 +120,16 @@ const Cart = () => {
     dispatch(remove(id))
   }
 
-  const formatPrice = (price = 0) => {
+  const formatPrice = (preco = 0) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
-    }).format(price)
+    }).format(preco)
   }
 
   const getTotalPrice = () => {
     return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.price)
+      return (acumulador += valorAtual.preco)
     }, 0)
   }
 
@@ -261,7 +262,7 @@ const Cart = () => {
                     <h3>
                       Pagamento - Valor a pagar {formatPrice(getTotalPrice())}
                     </h3>
-                    <label htmlFor="cardName">nome no cartão</label>
+                    <label htmlFor="cardName">name no cartão</label>
                     <input
                       type="text"
                       id="cardName"
@@ -404,12 +405,12 @@ const Cart = () => {
                       <S.CartItem key={item.id}>
                         <img
                           className="food-image"
-                          src={item.photo}
-                          alt={`${item.name} imagem`}
+                          src={item.foto}
+                          alt={`${item.nome} imagem`}
                         />
                         <div>
-                          <h3>{item.name}</h3>
-                          <p>{formatPrice(item.price)}</p>
+                          <h3>{item.nome}</h3>
+                          <p>{formatPrice(item.preco)}</p>
                         </div>
                         <S.RemoveIcon onClick={() => removeItem(item.id)} />
                       </S.CartItem>

@@ -14,12 +14,12 @@ const FoodsList = ({ food }: Props) => (
       {food.map((food) => (
         <FoodCard
           key={food.id}
-          photo={food.photo}
-          price={food.price}
+          foto={food.foto}
+          preco={food.preco}
           id={food.id}
-          name={food.name}
-          description={food.description}
-          portion={food.portion}
+          nome={food.nome}
+          descricao={food.descricao}
+          porcao={food.porcao}
           food={food}
         />
       ))}

@@ -3,7 +3,7 @@ import { Restaurant } from '../pages/Home'
 
 type Product = {
   id: number
-  price: number
+  preco: number
 }
 
 type PurchasePayload = {
