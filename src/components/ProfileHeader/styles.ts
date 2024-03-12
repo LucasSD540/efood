@@ -1,10 +1,10 @@
-import styled from "styled-components"
-import { breakpoints, cores } from "../../styles"
+import styled from 'styled-components'
+import { breakpoints, colors } from '../../styles'
 
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 export const ProfContainer = styled.div`
-  background-color: ${cores.fundo};
+  background-color: ${colors.fundo};
   height: 443px;
 
   .container {
@@ -16,11 +16,11 @@ export const ProfContainer = styled.div`
 
     @media (max-width: ${breakpoints.desktop}) {
       max-width: 680px;
-  }
+    }
 
-  @media (max-width: ${breakpoints.tablet}) {
-    flex-direction: column;
-}
+    @media (max-width: ${breakpoints.tablet}) {
+      flex-direction: column;
+    }
   }
 `
 
@@ -65,7 +65,7 @@ export const RestaurantImg = styled.div`
 `
 
 export const OriginTitle = styled.h5`
-  color: ${cores.branco};
+  color: ${colors.branco};
   font-size: 32px;
   position: absolute;
   top: 24px;
@@ -74,11 +74,11 @@ export const OriginTitle = styled.h5`
 
   @media (max-width: ${breakpoints.tablet}) {
     display: none;
-}
+  }
 `
 
 export const Title = styled.h4`
-  color: ${cores.branco};
+  color: ${colors.branco};
   font-size: 32px;
   position: absolute;
   bottom: 32px;
@@ -87,13 +87,13 @@ export const Title = styled.h4`
 
   @media (max-width: ${breakpoints.tablet}) {
     display: none;
-}
+  }
 `
 
 export const CartLink = styled.button`
   background-color: transparent;
   text-decoration: none;
-  color: ${cores.vermelho};
+  color: ${colors.vermelho};
   font-size: 18px;
   font-weight: bold;
   border: none;
@@ -101,5 +101,5 @@ export const CartLink = styled.button`
 
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 14px;
-}
+  }
 `

@@ -1,11 +1,11 @@
-import styled from "styled-components"
-import { breakpoints, cores } from "../../styles"
+import styled from 'styled-components'
+import { breakpoints, colors } from '../../styles'
 
 export const Card = styled.div`
   max-width: 320px;
   width: 100%;
   height: 330px;
-  background-color: ${cores.vermelho};
+  background-color: ${colors.vermelho};
 
   @media (max-width: ${breakpoints.tablet}) {
     max-width: 80%;
@@ -28,7 +28,7 @@ export const FoodImage = styled.img`
 export const FoodName = styled.h3`
   weight: 900;
   font-size: 16px;
-  color: ${cores.fundo};
+  color: ${colors.fundo};
   margin-top: 8px;
   margin-bottom: 8px;
 
@@ -43,7 +43,7 @@ export const FoodDescription = styled.p`
   height: 88px;
   font-size: 14px;
   line-height: 22px;
-  color: ${cores.fundo};
+  color: ${colors.fundo};
   margin-bottom: 8px;
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -56,8 +56,8 @@ export const DetailsBtn = styled.button`
   max-width: 304px;
   width: 100%;
   height: 24px;
-  background-color: ${cores.fundo};
-  color: ${cores.vermelho};
+  background-color: ${colors.fundo};
+  color: ${colors.vermelho};
   font-weight: bold;
   font-size: 14px;
   border: none;
@@ -105,7 +105,7 @@ export const ModalContent = styled.div`
   height: 344px;
   position: relative;
   z-index: 1;
-  background-color: ${cores.vermelho};
+  background-color: ${colors.vermelho};
   display: flex;
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -128,7 +128,7 @@ export const ModalContent = styled.div`
   h3 {
     weight: 900;
     font-size: 18px;
-    color: ${cores.fundo};
+    color: ${colors.fundo};
     margin-bottom: 16px;
 
     @media (max-width: ${breakpoints.desktop}) {
@@ -145,7 +145,7 @@ export const ModalContent = styled.div`
   p {
     font-size: 14px;
     line-height: 22px;
-    color: ${cores.fundo};
+    color: ${colors.fundo};
     margin-bottom: 16px;
 
     @media (max-width: ${breakpoints.desktop}) {
@@ -171,7 +171,7 @@ export const ModalContent = styled.div`
 
     @media (max-width: ${breakpoints.tablet}) {
       right: 0px;
-    top: 0px;
+      top: 0px;
     }
   }
 
@@ -194,8 +194,8 @@ export const AddBtn = styled.button`
   max-width: 218px;
   width: 100%;
   height: 24px;
-  background-color: ${cores.fundo};
-  color: ${cores.vermelho};
+  background-color: ${colors.fundo};
+  color: ${colors.vermelho};
   font-weight: bold;
   font-size: 14px;
   border: none;

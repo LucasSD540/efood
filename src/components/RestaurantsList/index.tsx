@@ -1,7 +1,7 @@
-import { Restaurant } from "../../pages/Home"
-import RestaurantCard from "../Restaurants"
+import { Restaurant } from '../../pages/Home'
+import RestaurantCard from '../Restaurants'
 
-import { RestaurantList } from "./styles"
+import { RestaurantList } from './styles'
 
 export type Props = {
   restaurant: Restaurant[]
@@ -14,12 +14,12 @@ const List = ({ restaurant }: Props) => (
         <RestaurantCard
           key={restaurant.id}
           id={restaurant.id}
-          titulo={restaurant.titulo}
-          destacado={restaurant.destacado}
-          tipo={restaurant.tipo}
-          avaliacao={restaurant.avaliacao}
-          descricao={restaurant.descricao}
-          capa={restaurant.capa}
+          title={restaurant.title}
+          highlighted={restaurant.highlighted}
+          type={restaurant.type}
+          assessment={restaurant.assessment}
+          description={restaurant.description}
+          cover={restaurant.cover}
         />
       ))}
     </RestaurantList>

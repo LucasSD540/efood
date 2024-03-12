@@ -7,10 +7,10 @@ const Header = () => (
       <S.Logo to={'/'}>
         <img src={logo} alt="EFOOD" />
       </S.Logo>
-      <S.Titulo>
+      <S.Title>
         Viva experiências gastronômicas <br />
         no conforto da sua casa
-      </S.Titulo>
+      </S.Title>
     </div>
   </S.HeaderDiv>
 )

@@ -1,14 +1,14 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import imagemFundo from '../../assets/images/imagemFundo.png'
 import { Link } from 'react-router-dom'
 
 export const HeaderDiv = styled.div`
-  background-color: ${cores.fundo};
+  background-color: ${colors.fundo};
   display: flex;
   flex-direction: column;
   height: 360px;
-  color: ${cores.vermelho};
+  color: ${colors.vermelho};
   text-align: center;
   background-image: url(${imagemFundo});
 `
@@ -28,7 +28,7 @@ export const Logo = styled(Link)`
   }
 `
 
-export const Titulo = styled.h2`
+export const Title = styled.h2`
   font-size: 36px;
   margin-top: 138.5px;
   margin-bottom: 40px;

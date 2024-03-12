@@ -1,17 +1,18 @@
-import Header from "../../components/Header"
-import RestaurantsList from "../../components/RestaurantsList"
-import { FoodItem } from "../Profile"
-import { useGetRestaurantsQuery } from "../../services/api"
+import Header from '../../components/Header'
+import RestaurantsList from '../../components/RestaurantsList'
+import { FoodItem } from '../Profile'
+import { useGetRestaurantsQuery } from '../../services/api'
+import Loader from '../../components/Loader'
 
 export type Restaurant = {
-  cardapio: FoodItem[]
+  menu: FoodItem[]
   id: number
-  titulo: string
-  destacado: boolean
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
+  title: string
+  highlighted: boolean
+  type: string
+  assessment: number
+  description: string
+  cover: string
 }
 
 const Home = () => {
@@ -25,7 +26,7 @@ const Home = () => {
       </>
     )
   }
-  return <h4>Carregando</h4>
+  return <Loader />
 }
 
 export default Home

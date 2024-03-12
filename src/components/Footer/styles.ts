@@ -1,8 +1,8 @@
-import styled from "styled-components"
-import { breakpoints, cores } from "../../styles"
+import styled from 'styled-components'
+import { breakpoints, colors } from '../../styles'
 
 export const FooterDiv = styled.div`
-  background-color: ${cores.fundo};
+  background-color: ${colors.fundo};
   height: 298px;
 `
 
@@ -31,6 +31,6 @@ export const FooterContainer = styled.div`
 
   p {
     font-size: 10px;
-    color: ${cores.vermelho};
+    color: ${colors.vermelho};
   }
 `

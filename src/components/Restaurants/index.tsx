@@ -5,47 +5,51 @@ import Tag from '../Tag'
 
 type Props = {
   id: number
-  titulo: string
-  destacado: boolean
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
+  title: string
+  highlighted: boolean
+  type: string
+  assessment: number
+  description: string
+  cover: string
 }
 
 const RestaurantCard = ({
   id,
-  titulo,
-  destacado,
-  tipo,
-  avaliacao,
-  descricao,
-  capa
+  title,
+  highlighted,
+  type,
+  assessment,
+  description,
+  cover
 }: Props) => {
-  const getDescricao = (descricao: string) => {
-    if (descricao.length > 240) {
-      return descricao.slice(0, 237) + '...'
+  const getDescricao = (description: string) => {
+    if (description.length > 240) {
+      return description.slice(0, 237) + '...'
     }
-    return descricao
+    return description
   }
 
   return (
     <S.Card>
-      <img src={capa} alt={`Imagem ${titulo}`} />
+      <img src={cover} alt={`Imagem ${title}`} />
       <S.Btns>
-        <Tag destacado={destacado} />
-        <BtnContainer className='btn-country'>{tipo}</BtnContainer>
+        <Tag highlighted={highlighted} />
+        <BtnContainer className="btn-country">{type}</BtnContainer>
       </S.Btns>
       <S.ContainerDescription>
         <S.DivFlex>
-          <h3>{titulo}</h3>
+          <h3>{title}</h3>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <p>{avaliacao}</p>
-            <span><img src={star_favorite} alt="estrela de favoritos" /></span>
+            <p>{assessment}</p>
+            <span>
+              <img src={star_favorite} alt="estrela de favoritos" />
+            </span>
           </div>
         </S.DivFlex>
-        <S.Description>{getDescricao(descricao)}</S.Description>
-        <S.BtnLink to={`/perfil/${id}`} className='btn-saiba_mais'>Saiba mais</S.BtnLink>
+        <S.Description>{getDescricao(description)}</S.Description>
+        <S.BtnLink to={`/perfil/${id}`} className="btn-saiba_mais">
+          Saiba mais
+        </S.BtnLink>
       </S.ContainerDescription>
     </S.Card>
   )

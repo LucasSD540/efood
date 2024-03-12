@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { FoodItem } from "../../pages/Profile"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { FoodItem } from '../../pages/Profile'
 
 type CartState = {
   items: FoodItem[]
@@ -32,9 +32,12 @@ const cartSlice = createSlice({
     },
     close: (state) => {
       state.isOpen = false
+    },
+    clear: (state) => {
+      state.items = []
     }
   }
 })
 
-export const { add, remove, open, close } = cartSlice.actions
+export const { add, remove, open, close, clear } = cartSlice.actions
 export default cartSlice.reducer

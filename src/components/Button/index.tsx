@@ -11,7 +11,7 @@ export type Props = {
 const Button = ({ type, title, to, onClick, children }: Props) => {
   if (type === 'button') {
     return (
-      <S.BtnContainer type="button" title={title} onClick={onClick} >
+      <S.BtnContainer type="button" title={title} onClick={onClick}>
         {children}
       </S.BtnContainer>
     )

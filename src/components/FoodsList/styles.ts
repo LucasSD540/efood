@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { breakpoints } from "../../styles"
+import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const FoodContainer = styled.div`
   margin-top: 56px;

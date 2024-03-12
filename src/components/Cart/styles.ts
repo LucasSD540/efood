@@ -1,7 +1,9 @@
-import styled from "styled-components"
-import { breakpoints, cores } from "../../styles"
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 import removeIcon from '../../assets/images/remove.png'
+
+import { breakpoints, colors } from '../../styles'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -27,10 +29,16 @@ export const CartContainer = styled.div`
   &.is-open {
     display: flex;
   }
-` 
+
+  p {
+    color: ${colors.fundo};
+    font-size: 16px;
+    font-weight: bold;
+  }
+`
 
 export const Sidebar = styled.aside`
-  background-color: ${cores.vermelho};
+  background-color: ${colors.vermelho};
   z-index: 1;
   max-width: 360px;
   width: 100%;
@@ -48,7 +56,7 @@ export const CartItem = styled.li`
   max-width: 344px;
   width: 100%;
   height: 100px;
-  background-color: ${cores.fundo};
+  background-color: ${colors.fundo};
   margin-bottom: 16px;
   position: relative;
 
@@ -63,7 +71,7 @@ export const CartItem = styled.li`
   h3 {
     font-size: 18px;
     font-weight: bold;
-    color: ${cores.vermelho};
+    color: ${colors.vermelho};
   }
 
   div {
@@ -72,7 +80,7 @@ export const CartItem = styled.li`
     p {
       margin-top: 16px;
       font-size: 14px;
-      color: ${cores.vermelho};
+      color: ${colors.vermelho};
     }
   }
 `
@@ -80,15 +88,15 @@ export const CartItem = styled.li`
 export const PriceContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  color: ${cores.fundo};
+  color: ${colors.fundo};
   font-size: 14px;
   font-weight: 700;
   margin-top: 40px;
 `
 
 export const CartBtn = styled.button`
-  background-color: ${cores.fundo};
-  color: ${cores.vermelho};
+  background-color: ${colors.fundo};
+  color: ${colors.vermelho};
   border: none;
   font-size: 14px;
   font-weight: 700;
@@ -96,6 +104,21 @@ export const CartBtn = styled.button`
   height: 24px;
   margin-top: 16px;
   cursor: pointer;
+`
+
+export const CompletedBtn = styled(Link)`
+  background-color: ${colors.fundo};
+  color: ${colors.vermelho};
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  padding: 4px 0;
+  margin-top: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  text-align: center;
 `
 
 export const RemoveIcon = styled.button`
@@ -109,4 +132,60 @@ export const RemoveIcon = styled.button`
   background-image: url(${removeIcon});
   background-color: transparent;
   border: none;
+`
+
+export const FormContainer = styled.div`
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: ${colors.fundo};
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 700;
+    color: ${colors.fundo};
+    margin: 8px 0;
+  }
+
+  input {
+    background-color: ${colors.fundo};
+    border: 1px solid ${colors.fundo};
+    height: 32px;
+
+    &.error {
+      border: 2px solid red;
+    }
+  }
+`
+
+export const GroupInputOne = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const GroupOne = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 34px;
+`
+
+export const CheckoutDiv = styled.div`
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: ${colors.fundo};
+  }
+
+  p {
+    font-size: 14px;
+    color: ${colors.fundo};
+    margin: 16px 0;
+    line-height: 22px;
+  }
 `

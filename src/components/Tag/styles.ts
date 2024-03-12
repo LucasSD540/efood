@@ -1,15 +1,15 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { Props } from "."
-import { breakpoints, cores } from "../../styles"
+import { Props } from '.'
+import { breakpoints, colors } from '../../styles'
 
 export const BtnEmphasis = styled.div<Props>`
-  display: ${(props) => props.destacado ? 'inline-block' : 'none'};
+  display: ${(props) => (props.highlighted ? 'inline-block' : 'none')};
 `
 
 export const BtnStyle = styled.button`
-  background-color: ${cores.vermelho};
-  color: ${cores.fundo};
+  background-color: ${colors.vermelho};
+  color: ${colors.fundo};
   padding: 6px 4px;
   font-size: 12px;
   border: none;

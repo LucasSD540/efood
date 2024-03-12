@@ -10,16 +10,16 @@ type Props = {
 
 const FoodsList = ({ food }: Props) => (
   <S.FoodContainer>
-    <S.GridContainer className='container'>
+    <S.GridContainer className="container">
       {food.map((food) => (
-        <FoodCard 
+        <FoodCard
           key={food.id}
-          foto={food.foto}
-          preco={food.preco}
+          photo={food.photo}
+          price={food.price}
           id={food.id}
-          nome={food.nome}
-          descricao={food.descricao}
-          porcao={food.porcao}
+          name={food.name}
+          description={food.description}
+          portion={food.portion}
           food={food}
         />
       ))}

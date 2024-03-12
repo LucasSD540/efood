@@ -1,26 +1,27 @@
-import FoodsList from "../../components/FoodsList"
-import ProfileHeader from "../../components/ProfileHeader"
-import { useParams } from "react-router-dom"
-import { useGetFoodsQuery } from "../../services/api"
+import FoodsList from '../../components/FoodsList'
+import ProfileHeader from '../../components/ProfileHeader'
+import { useParams } from 'react-router-dom'
+import { useGetFoodsQuery } from '../../services/api'
+import Loader from '../../components/Loader'
 
 export type FoodItem = {
-    foto: string
-    preco: number
-    id: number
-    nome: string
-    descricao: string
-    porcao: string
+  description: string
+  portion: string
+  photo: string
+  price: number
+  id: number
+  name: string
 }
 
 export type Restaurant = {
-  id: number;
-  titulo: string;
-  destacado: boolean;
-  tipo: string;
-  avaliacao: number;
-  descricao: string;
-  capa: string;
-  cardapio: FoodItem[];
+  id: number
+  title: string
+  highlighted: boolean
+  type: string
+  assessment: number
+  description: string
+  cover: string
+  menu: FoodItem[]
 }
 
 const Profile = () => {
@@ -28,13 +29,13 @@ const Profile = () => {
   const { data: food, data: restaurant } = useGetFoodsQuery(id!)
 
   if (!food) {
-    return <h3>Carregando</h3>
+    return <Loader />
   }
 
   return (
     <>
       {restaurant && <ProfileHeader restaurant={restaurant} />}
-      {restaurant && <FoodsList food={restaurant.cardapio} />}
+      {restaurant && <FoodsList food={restaurant.menu} />}
     </>
   )
 }

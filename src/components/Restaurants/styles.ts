@@ -1,15 +1,15 @@
-import styled from "styled-components"
-import { breakpoints, cores } from "../../styles"
-import { Link } from "react-router-dom"
+import styled from 'styled-components'
+import { breakpoints, colors } from '../../styles'
+import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
   height: 408px;
   max-width: 472px;
   width: 100%;
-  background-color: ${cores.branco};
-  color: ${cores.vermelho};
+  background-color: ${colors.branco};
+  color: ${colors.vermelho};
   font-size: 14px;
-  border: 1px solid ${cores.vermelho};
+  border: 1px solid ${colors.vermelho};
   position: relative;
 
   .btn-saiba_mais {
@@ -74,11 +74,11 @@ export const Btns = styled.div`
   position: absolute;
   top: 16px;
   right: 14px;
-  
+
   .btn-country {
     margin-left: 8px;
     cursor: initial;
-    
+
     @media (max-width: ${breakpoints.tablet}) {
       font-size: 12px;
       padding: 4px 2px;
@@ -97,8 +97,8 @@ export const ContainerDescription = styled.div`
 `
 
 export const BtnLink = styled(Link)`
-  background-color: ${cores.vermelho};
-  color: ${cores.fundo};
+  background-color: ${colors.vermelho};
+  color: ${colors.fundo};
   padding: 6px 4px;
   font-size: 14px;
   font-weight: 700;
