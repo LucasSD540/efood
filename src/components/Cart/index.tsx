@@ -136,14 +136,15 @@ const Cart = () => {
   const ShowCheckout = () => {
     if (form.isValid) {
       setFormContent(false)
+      form.handleSubmit()
     }
   }
 
   const FinishOrder = () => {
     if (form.isValid) {
-      form.handleSubmit()
       clearCart()
       closeCart()
+      form.initialValues
       form.initialStatus
     }
   }
@@ -262,7 +263,7 @@ const Cart = () => {
                     <h3>
                       Pagamento - Valor a pagar {formatPrice(getTotalPrice())}
                     </h3>
-                    <label htmlFor="cardName">name no cartão</label>
+                    <label htmlFor="cardName">Nome no cartão</label>
                     <input
                       type="text"
                       id="cardName"
