@@ -16,6 +16,7 @@ const Cart = () => {
   const [formContent, setFormContent] = useState(false)
   const [deliveryForm, setDeliveryForm] = useState(false)
   const [paymentForm, setPaymentForm] = useState(false)
+  const [showCheckoutMessage, setShowCheckoutMessage] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -140,6 +141,7 @@ const Cart = () => {
 
   const ShowCheckout = () => {
     if (form.isValid) {
+      setShowCheckoutMessage(true)
       setFormContent(false)
       form.handleSubmit()
     } else enterPayment
@@ -149,6 +151,7 @@ const Cart = () => {
     if (form.isValid) {
       clearCart()
       closeCart()
+      setShowCheckoutMessage(false)
     }
   }
 
@@ -377,7 +380,7 @@ const Cart = () => {
                 )}
               </form>
             </S.FormContainer>
-          ) : isSuccess && data ? (
+          ) : showCheckoutMessage && isSuccess && data ? (
             <S.CheckoutDiv>
               {isError ? (
                 <p>Preencha os dados corretamente</p>
