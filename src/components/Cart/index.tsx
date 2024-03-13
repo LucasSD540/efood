@@ -108,6 +108,11 @@ const Cart = () => {
     return hasError
   }
 
+  const checkInputNotTouched = (fieldName: string) => {
+    const isTouched = fieldName in form.touched
+    return !isTouched
+  }
+
   const closeCart = () => {
     dispatch(close())
   }
@@ -137,15 +142,13 @@ const Cart = () => {
     if (form.isValid) {
       setFormContent(false)
       form.handleSubmit()
-    }
+    } else enterPayment
   }
 
   const FinishOrder = () => {
     if (form.isValid) {
       clearCart()
       closeCart()
-      form.initialValues
-      form.initialStatus
     }
   }
 
@@ -155,10 +158,14 @@ const Cart = () => {
   }
 
   const enterPayment = () => {
+    if (checkInputNotTouched('fullName')) {
+      return
+    }
+
     if (form.isValid) {
       setDeliveryForm(false)
       setPaymentForm(true)
-    }
+    } else enterForm
   }
 
   return (
@@ -248,7 +255,11 @@ const Cart = () => {
                       onChange={form.handleChange}
                       onBlur={form.handleBlur}
                     />
-                    <S.CartBtn type="button" onClick={enterPayment}>
+                    <S.CartBtn
+                      type="button"
+                      onClick={enterPayment}
+                      disabled={checkInputNotTouched('fullName')}
+                    >
                       Continuar com o pagamento
                     </S.CartBtn>
                     <S.CartBtn
