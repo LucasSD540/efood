@@ -158,6 +158,7 @@ export const ModalContent = styled.div`
       font-size: 10px;
       line-height: 12px;
       margin-bottom: 8px;
+      text-align: justify;
     }
   }
 

@@ -158,21 +158,18 @@ export const FormContainer = styled.div`
     border: 1px solid ${colors.fundo};
     height: 32px;
 
+    &#cep,
+    &#number,
+    &#expiresMonth,
+    &#expiresYear {
+      max-width: 300px;
+      width: 100%;
+    }
+
     &.error {
       border: 2px solid red;
     }
   }
-`
-
-export const GroupInputOne = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-export const GroupOne = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 34px;
 `
 
 export const CheckoutDiv = styled.div`
